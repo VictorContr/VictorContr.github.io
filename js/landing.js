@@ -13,7 +13,7 @@ export const setupMobileMenu =()=> {
             menu.classList.toggle('md:flex');
         }
         
-        menuToggle.addEventListener('click', toggleMenu);
+        menuToggle.addEventListener('click', toggleMenu());
     }
 }
 

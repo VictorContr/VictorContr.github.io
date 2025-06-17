@@ -1,4 +1,4 @@
-import { landing, setupMobileMenu, setupScrollAnimations, setupSmoothScrolling } from "./landing.js";
+import { landing, setupMobileMenu, setupScrollAnimations, setupSmoothScrolling} from "./landing.js";
 import { iniciarSesion_vc, login, register, RegistrarUsuario_vc, toggleEye } from "./login.js";
 if (landing) {
     tailwind.config = {
