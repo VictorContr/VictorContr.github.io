@@ -1,4 +1,5 @@
-import { iniciarSesion_vc, landing, login, register, RegistrarUsuario_vc, toggleEye } from "./login.js";
+import { landing, setupMobileMenu, setupScrollAnimations, setupSmoothScrolling } from "./landing.js";
+import { iniciarSesion_vc, login, register, RegistrarUsuario_vc, toggleEye } from "./login.js";
 if (landing) {
     tailwind.config = {
       darkMode: 'class',
@@ -47,50 +48,54 @@ if (landing) {
         }
       }
     }
+    setupMobileMenu();
+    setupSmoothScrolling();
+    setupScrollAnimations();
 }
 if (login) {
-     tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'dark': '#0D0A0B',
-                        'gray': '#454955',
-                        'light': '#F3EFF5',
-                        'primary': '#72B01D',
-                        'primary-dark': '#3F7D20'
-                    }
-                }
-            }
-        }
-    login.addEventListener('submit', (e) => {
-      e.preventDefault();
-      console.log('login');
-      iniciarSesion_vc();
+tailwind.config = {
+      theme: {
+          extend: {
+              colors: {
+                  'dark': '#0D0A0B',
+                  'gray': '#454955',
+                  'light': '#F3EFF5',
+                  'primary': '#72B01D',
+                  'primary-dark': '#3F7D20'
+              }
+          }
+      }
+  }
+toggleEye();
+login.addEventListener('submit', (e) => {
+e.preventDefault();
+console.log('login');
+iniciarSesion_vc();
     });
 }
 
 if (register) {
-         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'dark': '#0D0A0B',
-                        'gray': '#454955',
-                        'light': '#F3EFF5',
-                        'primary': '#72B01D',
-                        'primary-dark': '#3F7D20'
-                    }
-                }
-            }
-        }
-    register.addEventListener('submit', e => {
-      e.preventDefault();
-      console.log('registrar');
-      RegistrarUsuario_vc()
-    });
+tailwind.config = {
+  theme: {
+      extend: {
+          colors: {
+              'dark': '#0D0A0B',
+              'gray': '#454955',
+              'light': '#F3EFF5',
+              'primary': '#72B01D',
+              'primary-dark': '#3F7D20'
+          }
+      }
+  }}
+toggleEye();
+register.addEventListener('submit', e => {
+  e.preventDefault();
+  console.log('registrar');
+  RegistrarUsuario_vc()
+});
     
 }
-    // Menú móvil, animaciones y modo oscuro
+    // Menú móvil y animaciones 
     document.addEventListener('DOMContentLoaded', function() {
       // Menú móvil
       const menuToggle = document.querySelector('[data-menu-toggle]');
@@ -131,8 +136,5 @@ if (register) {
       document.querySelectorAll('.benefit-item, .service-card, .animate-on-scroll').forEach(el => {
         observer.observe(el);
       });
-      if (register || login) {
-        toggleEye();
-      }
       
     });

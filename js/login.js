@@ -1,32 +1,8 @@
-"use strict";
-
-// IMPORTAR FUNCIONES (asumiendo que validación.js existe)
-// import { validacionUsuario_vc } from "../function/validacion.js";
-
 // EXPORTAR VARIABLE GLOBAL
 export let users_vc = [];
-export const landing = document.getElementById("landing")
 export const login = document.getElementById("login")
 export const register = document.getElementById("register")
 
-// FUNCIÓN PARA MOSTRAR MODAL (se mantiene igual)
-// export const mostrarAlerta_vc = (mensaje_vc) => {
-//   const modal_vc = document.getElementById('miModal');
-//   const span_vc = document.getElementsByClassName("close")[0];
-//   const textmodal_vc = document.getElementById('textoModal');
-//   textmodal_vc.innerText = mensaje_vc;
-//   modal_vc.style.display = "block";
-  
-//   span_vc.addEventListener('click', (e) => {
-//     modal_vc.style.display = "none";
-//   });
-  
-//   modal_vc.addEventListener('click', (e) => {
-//     if (e.target == modal_vc) {
-//       modal_vc.style.display = "none";
-//     }
-//   });
-// }
 
 // INICIAR SESIÓN (modificada para usar correo)
 export const iniciarSesion_vc = () => {
@@ -70,12 +46,6 @@ export const RegistrarUsuario_vc = () => {
     correo: document.getElementById('correo').value,
     clave: document.getElementById('clave').value
   };
-
-//   // Validación básica
-//   if (!validacionUsuario_vc(datos)) {
-//     mostrarAlerta_vc('Error en la validación');
-//     return;
-//   }
 
   // Obtener usuarios existentes
   const usuariosExistentes = JSON.parse(localStorage.getItem('users_vc')) || [];
