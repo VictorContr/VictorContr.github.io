@@ -42,7 +42,8 @@ LANDING/
 3. Abre `index.html` en tu navegador para ver la landing page.
 
 ## Créditos
-- Autor: VictorContr
+- Autor1: Victor Contreras
+- Autor2: Guillermo Alvarez
 - Materia: Ingeniería del Software
 
 ---
